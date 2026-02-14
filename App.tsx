@@ -4,6 +4,7 @@ import clickSound from './assets/sounds/buttonClick.mp3';
 
 function App() {
   const [number, setNumber] = useState(0);
+  const [value, setValue] = useState(0);
   const [warning, setWarning] = useState("");
   const audio = new Audio(clickSound);
 
@@ -14,14 +15,14 @@ function App() {
   }
 
   const increaseNum = () => {
-    setNumber(number + 1);
+    setNumber(number + value);
     soundPlay();
     setWarning("");
   }
 
   const decreaseNum = () => {
-    if(number != 0) {
-      setNumber(number - 1);
+    if(number - value >= 0) {
+      setNumber(number - value);
       soundPlay();
       setWarning("");
     } else {
@@ -49,6 +50,10 @@ function App() {
         </div>
         <h4 id="counter" className="counterClass">{number}</h4>
         <h4 className="warningClass">{warning}</h4>
+
+        <div>
+          <input type="text" className="inputValue" value={value} onChange={(e) => setValue(Number(e.target.value))}/>
+        </div>
 
         <div className="buttonSection">
           <button className="increaseBtn" onClick={increaseNum}>Increase</button>
