@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="section">
         <div className="title">
             <span>N</span><span>u</span>
             <span>m</span><span>b</span>
