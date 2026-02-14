@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.title {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.title span {
+    display: inline-block;
+    font-size: 4rem;
+    animation: wave 2s ease-in-out infinite, rainbow 3s linear infinite;
+}
+
+.title span:nth-child(1) { animation-delay: 0s; }
+.title span:nth-child(2) { animation-delay: 0.2s; }
+.title span:nth-child(3) { animation-delay: 0.4s; }
+.title span:nth-child(4) { animation-delay: 0.6s; }
+.title span:nth-child(5) { animation-delay: 0.8s; }
+.title span:nth-child(6) { animation-delay: 1s; }
+.title span:nth-child(7) { animation-delay: 1.2s; }
+.title span:nth-child(8) { animation-delay: 1.4s; }
+.title span:nth-child(9) { animation-delay: 1.6s; }
+.title span:nth-child(10) { animation-delay: 1.8s; }
+.title span:nth-child(11) { animation-delay: 2s; }
+.title span:nth-child(12) { animation-delay: 2.2s; }
+.title span:nth-child(13) { animation-delay: 2.4s; }
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rainbow {
+  0%   { color: red; }
+  16%  { color: orange; }
+  33%  { color: yellow; }
+  50%  { color: green; }
+  66%  { color: blue; }
+  83%  { color: indigo; }
+  100% { color: violet; }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.counterClass {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+.warningClass {
+  color: red;
+  font-size: 20px;
+  margin-bottom: 45px;
+  padding: 15px;
+}
+
+button {
+  margin: 5px;
+  padding: 20px 30px 20px 30px;
+  max-width: 250px;
+  width: 100%;
+  font-size: 20px;
+}
+
+.buttonSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  border: 1px solid transparent;
+  animation: var(--animate-bounce);
+}
+
+.counterClass {
+  margin: 30px 0 30px 0;
+  font-size: 50px;
+}
+
+.increaseBtn {
+  background-color: rgb(156, 255, 156);
+  color: black;
+}
+
+.decreaseBtn {
+  background-color: rgb(255, 117, 117);
+  color: black;
+}
+
+.resetBtn {
+  background-color: rgb(129, 255, 255);
+  color: black;
+  grid-column: 1 / 3;
+  justify-self: center;
+}
